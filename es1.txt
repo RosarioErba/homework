@@ -1,0 +1,16 @@
+// C code
+// C++ code
+//
+int led1 = 10; 
+
+void setup() {
+  pinMode(led1, OUTPUT); 
+}
+
+void loop() {
+  digitalWrite(led1, HIGH); // Accendi il LED
+  delay(200);                // Aspetta 200 millisecondi
+  
+  digitalWrite(led1, LOW);  // Spegni il LED
+  delay(200);                // Aspetta 200 millisecondi
+}

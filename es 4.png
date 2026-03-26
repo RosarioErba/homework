@@ -1,0 +1,72 @@
+int R1 = 13, Y1 = 9, G1 = 5;
+int R2 = 12, Y2 = 8, G2 = 4;
+int R3 = 11, Y3 = 7, G3 = 3;
+int R4 = 10, Y4 = 6, G4 = 2;
+int pul = 12; 
+int pull=0;
+
+
+void setup() {
+  for (int i = 2; i <= 13; i++) {
+    pinMode(i, OUTPUT);
+  }
+  pinMode(pul, INPUT);
+}
+
+void loop() {
+   pull = digitalRead(pul);
+  if (pull== HIGH) {
+    digitalWrite(R1, LOW);
+    digitalWrite(G1, HIGH);
+    digitalWrite(R3, LOW);
+    digitalWrite(G3, HIGH);
+    digitalWrite(R2, HIGH);
+    digitalWrite(R4, HIGH);
+    digitalWrite(Y2, LOW);
+    digitalWrite(Y4, LOW);
+    delay(4000);
+
+    digitalWrite(G1, LOW);
+    digitalWrite(Y1, HIGH);
+    digitalWrite(G3, LOW);
+    digitalWrite(Y3, HIGH);
+    delay(1500);
+
+    digitalWrite(Y1, LOW);
+    digitalWrite(R1, HIGH);
+    digitalWrite(Y3, LOW);
+    digitalWrite(R3, HIGH);
+    delay(500);
+
+    digitalWrite(R2, LOW);
+    digitalWrite(G2, HIGH);
+    digitalWrite(R4, LOW);
+    digitalWrite(G4, HIGH);
+    digitalWrite(R1, HIGH);
+    digitalWrite(R3, HIGH);
+    digitalWrite(Y1, LOW);
+    digitalWrite(Y3, LOW);
+    delay(4000);
+
+    digitalWrite(G2, LOW);
+    digitalWrite(Y2, HIGH);
+    digitalWrite(G4, LOW);
+    digitalWrite(Y4, HIGH);
+    delay(1500);
+
+    digitalWrite(Y2, LOW);
+    digitalWrite(R2, HIGH);
+    digitalWrite(Y4, LOW);
+    digitalWrite(R4, HIGH);
+    delay(500);
+  } else {
+    digitalWrite(R1, HIGH);
+    digitalWrite(R2, HIGH);
+    digitalWrite(R3, HIGH);
+    digitalWrite(R4, HIGH);
+    digitalWrite(G1, LOW); digitalWrite(Y1, LOW);
+    digitalWrite(G2, LOW); digitalWrite(Y2, LOW);
+    digitalWrite(G3, LOW); digitalWrite(Y3, LOW);
+    digitalWrite(G4, LOW); digitalWrite(Y4, LOW);
+  }
+}
